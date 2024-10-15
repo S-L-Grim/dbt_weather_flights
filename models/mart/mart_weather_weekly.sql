@@ -13,4 +13,4 @@ WITH weekly_weather AS (
     FROM prep_weather_daily
     GROUP BY airport_code, DATE_TRUNC('week', date)
 )
-SELECT * FROM weekly_weather;
+SELECT * FROM weekly_weather

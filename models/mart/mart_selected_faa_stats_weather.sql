@@ -28,4 +28,4 @@ SELECT
     ap.country,
     ap.name
 FROM flight_weather fw
-JOIN prep_airports ap ON fw.faa = ap.faa;
+JOIN prep_airports ap ON fw.faa = ap.faa

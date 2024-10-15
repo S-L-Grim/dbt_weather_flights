@@ -24,4 +24,4 @@ SELECT
     dest_airports.name AS dest_name
 FROM route_stats rs
 JOIN prep_airports origin_airports ON rs.origin_faa = origin_airports.faa
-JOIN prep_airports dest_airports ON rs.dest_faa = dest_airports.faa;
+JOIN prep_airports dest_airports ON rs.dest_faa = dest_airports.faa
