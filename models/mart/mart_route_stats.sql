@@ -84,4 +84,4 @@ ON rs.origin_airport_code = oi.origin_airport_code
 LEFT JOIN destination_info di
 ON rs.destination_airport_code = di.destination_airport_code
 
-ORDER BY rs.origin_airport_code, rs.destination_airport_code;
+ORDER BY rs.origin_airport_code, rs.destination_airport_code

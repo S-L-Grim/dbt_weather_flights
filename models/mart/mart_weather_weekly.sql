@@ -48,4 +48,4 @@ SELECT
 FROM weekly_weather ww
 LEFT JOIN prep_airports ai
     ON ww.faa = ai.faa
-ORDER BY ww.week_start, ww.faa;
+ORDER BY ww.week_start, ww.faa

@@ -90,4 +90,4 @@ LEFT JOIN daily_weather dw
     AND dfs.flight_date = dw.weather_date
 LEFT JOIN airport_info ai
     ON dfs.faa = ai.faa
-ORDER BY dfs.flight_date, dfs.faa;
+ORDER BY dfs.flight_date, dfs.faa
