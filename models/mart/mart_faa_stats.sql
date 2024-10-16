@@ -8,7 +8,7 @@ WITH departures AS (
 							,COUNT(arr_time) AS dep_n_flights-- how many flights actually occured in total (departures)
 							,COUNT(DISTINCT tail_number) AS dep_nunique_tails -- *(optional) how many unique airplanes travelled on average*
 							,COUNT(DISTINCT airline) AS dep_nunique_airlines -- *(optional) how many unique airlines were in service  on average* 
-					FROM {{ref('prep_flights')}}
+					FROM prep_flights
 					GROUP BY origin
 ),
 -- unique number of arrival connections
@@ -21,7 +21,7 @@ arrivals AS (
 							,COUNT(arr_time)  AS arr_n_flights -- how many flights actually occured in total (arrivals)
 							,COUNT(DISTINCT tail_number) AS arr_nunique_tails -- *(optional) how many unique airplanes travelled on average*
 							,COUNT(DISTINCT airline) AS arr_nunique_airlines -- *(optional) how many unique airlines were in service  on average* 
-					FROM {{ref('prep_flights')}}
+					FROM prep_flights
 					GROUP BY dest
 ),
 total_stats AS (
@@ -42,7 +42,7 @@ SELECT city
 		,country
 		,name
 		,total_stats.*
-FROM {{ref('prep_airports')}}
+FROM prep_airports
 RIGHT JOIN total_stats
 USING (faa)
-ORDER BY city
+ORDER BY city;
